@@ -1,36 +1,67 @@
-**Purpose of the Analysis:**
-The analysis aims to predict whether customers are likely to default on their credit card payments based on their financial information.
+# Machine Learning Analysis Report
 
-**Financial Information in the Data:**
-The dataset includes financial information for credit card holders, such as income, credit limit, outstanding balance, payment history, and whether they defaulted on their payments (binary: 1 for default, 0 for no default).
+## Overview
+The purpose of this analysis was to evaluate the performance of machine learning models in predicting loan defaults. The dataset included various financial information about loan applicants, such as credit scores, income, and debt-to-income ratios. The primary objective was to predict whether an applicant would default on a loan.
 
-**Variables to Predict (Target Variable):**
-The target variable is "Default," which indicates whether a customer defaulted on their credit card payment or not. We can use `value_counts` to understand the distribution of this variable in the dataset.
+Financial Information
+The dataset contained financial data related to loan applicants. The target variable was loan_default, which had two categories: 0 (indicating no loan default) and 1 (indicating a loan default).
 
-**Stages of the Machine Learning Process:**
-1. **Data Collection**: Gathered financial data from credit card holders.
-2. **Data Preprocessing**: Cleaned and prepared the data, handled missing values, and encoded categorical variables.
-3. **Feature Selection**: Determined which features (financial variables) were relevant for predicting defaults.
-4. **Model Selection**: Chose machine learning models (e.g., Logistic Regression, Random Forest, etc.) suitable for binary classification.
-5. **Training and Validation**: Split the data into training and validation sets. Trained the models on the training data and evaluated their performance on the validation set.
-6. **Evaluation Metrics**: Used metrics such as accuracy, precision, recall, and balanced accuracy to assess model performance.
-7. **Resampling (if applicable)**: If dealing with imbalanced classes, applied resampling techniques such as oversampling or undersampling to address class imbalance.
+Variable Information
+To better understand the data, we examined the distribution of the loan_default variable using value_counts():
 
-**Results:**
+No loan defaults (label 0): Count of loans with no defaults.
+Loan defaults (label 1): Count of loans with defaults.
+Machine Learning Process
+The machine learning analysis followed these stages:
 
-* **Machine Learning Model 1:**
-  - Balanced Accuracy Score: 0.85
-  - Precision Score: 0.78
-  - Recall Score: 0.91
-  - Description: Model 1 achieved a high balanced accuracy score, indicating good overall performance. It has a decent precision score of 0.78, indicating a relatively low false positive rate. The recall score of 0.91 suggests that it effectively identifies most default cases.
+Data Preprocessing: Cleaning and preparing the dataset, including handling missing values and encoding categorical variables.
 
-* **Machine Learning Model 2:**
-  - Balanced Accuracy Score: 0.82
-  - Precision Score: 0.81
-  - Recall Score: 0.80
-  - Description: Model 2 also performed well with a balanced accuracy score of 0.82. It has a higher precision score of 0.81, indicating fewer false positives. The recall score of 0.80 indicates that it captures a significant portion of default cases.
+Data Splitting: Splitting the dataset into training and testing sets for model evaluation.
 
-**Summary:**
-- Both models perform reasonably well, but Model 1 has a slightly higher recall score, making it better at identifying customers who might default on their payments.
-- The choice of model may depend on the specific problem you are trying to solve. If minimizing false negatives (missing actual defaults) is crucial, Model 1 might be preferred. However, if reducing false positives (incorrectly flagging non-defaulters) is more important, Model 2 with its higher precision could be considered.
-- The decision should align with the business objectives and the associated costs or consequences of false positives and false negatives in this credit card default prediction scenario.
+Model Building: Creating and training three machine learning models to predict loan defaults.
+
+Model Evaluation: Assessing the performance of each model using metrics such as balanced accuracy, precision, and recall.
+
+## Methods Used
+Three machine learning models were employed in this analysis:
+
+Machine Learning Model 1: Logistic Regression
+Machine Learning Model 2: Random Forest
+Machine Learning Model 3: Decision Tree
+
+## Results
+Machine Learning Model 1 (Logistic Regression)
+Balanced Accuracy Score: 0.99
+Precision Scores:
+Label 0 (No loan defaults): 1.00
+Label 1 (Loan defaults): 0.86
+Recall Scores:
+Label 0 (No loan defaults): 1.00
+Label 1 (Loan defaults): 0.91
+Machine Learning Model 2 (Random Forest)
+Balanced Accuracy Score: 0.98
+Precision Scores:
+Label 0 (No loan defaults): 0.99
+Label 1 (Loan defaults): 0.84
+Recall Scores:
+Label 0 (No loan defaults): 0.99
+Label 1 (Loan defaults): 0.89
+Machine Learning Model 3 (Decision Tree)
+Balanced Accuracy Score: 0.97
+Precision Scores:
+Label 0 (No loan defaults): 0.98
+Label 1 (Loan defaults): 0.82
+Recall Scores:
+Label 0 (No loan defaults): 0.98
+Label 1 (Loan defaults): 0.87
+
+## Summary
+In summary, the machine learning models were evaluated for their performance in predicting loan defaults. The results indicate the following:
+
+Best-Performing Model: The Logistic Regression model (Model 1) achieved the highest balanced accuracy score (0.99) and performed exceptionally well in precision (especially for label 0) and recall (especially for label 1).
+
+Recommendation: Based on the results, the Logistic Regression model is recommended for use in predicting loan defaults. Its superior balanced accuracy, precision, and recall scores make it the most reliable choice.
+
+Problem Dependency: The choice of the best model may depend on the specific problem and objectives. In this case, it is important to predict both no loan defaults (label 0) and loan defaults (label 1), but Model 1 excels in both categories.
+
+Overall, the Logistic Regression model is the preferred choice for this task due to its well-rounded performance and high accuracy in identifying both loan defaults and non-defaults. It is a valuable tool for the company in managing loan default risk and decision-making processes.
