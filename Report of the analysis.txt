@@ -30,6 +30,7 @@ Machine Learning Model 2: Random Forest
 Machine Learning Model 3: Decision Tree
 
 ## Results
+
 Machine Learning Model 1 (Logistic Regression)
 Balanced Accuracy Score: 0.99
 Precision Scores:
@@ -38,6 +39,7 @@ Label 1 (Loan defaults): 0.86
 Recall Scores:
 Label 0 (No loan defaults): 1.00
 Label 1 (Loan defaults): 0.91
+
 Machine Learning Model 2 (Random Forest)
 Balanced Accuracy Score: 0.98
 Precision Scores:
@@ -46,6 +48,7 @@ Label 1 (Loan defaults): 0.84
 Recall Scores:
 Label 0 (No loan defaults): 0.99
 Label 1 (Loan defaults): 0.89
+
 Machine Learning Model 3 (Decision Tree)
 Balanced Accuracy Score: 0.97
 Precision Scores:
